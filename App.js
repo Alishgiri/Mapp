@@ -1,24 +1,100 @@
 import {
   View,
   Text,
-  Button,
+  Image,
   Animated,
   Dimensions,
+  StyleSheet,
   SafeAreaView,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import React from 'react';
-
 import SlidingUpPanel from 'rn-sliding-up-panel';
-import {generateFontistoIcon} from './lib/utilities/icon-generator';
+
+import {
+  generateOcticon,
+  generateFontistoIcon,
+  generateAntDesignIcon,
+} from './lib/utilities/icon-generator';
 import {AppButton} from './lib/components/ui';
 
 const {height} = Dimensions.get('window');
 
-const styles = {
+class App extends React.Component {
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={{flex: 1}}>
+          <Image
+            resizeMode="cover"
+            resizeMethod="scale"
+            style={styles.mapp_image}
+            source={require('./lib/assets/img/mapp.png')}
+          />
+          <AppButton
+            title="Sociteni"
+            onPress={() => {}}
+            titleStyle={styles.button_text}
+            style={styles.sociteni_button_background}
+            icon={generateOcticon('location', 20, '#d4d6d4')}
+          />
+          <AppButton
+            onPress={() => {}}
+            style={styles.menu_button_background}
+            title={generateAntDesignIcon('menu-unfold', 20, '#848784')}
+          />
+        </View>
+        <SlidingUpPanel
+          ref={c => (this._panel = c)}
+          animatedValue={new Animated.Value(80)}
+          draggableRange={{top: height / 1.5, bottom: 80}}>
+          <View style={styles.slideup_container}>
+            <Text style={styles.text}>EXPLORE</Text>
+
+            <AppButton
+              onPress={() => {}}
+              titleStyle={styles.commenting_button_text}
+              style={styles.commenting_button_background}
+              title={generateFontistoIcon('commenting', 20, 'white')}
+            />
+          </View>
+        </SlidingUpPanel>
+      </SafeAreaView>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ebedeb',
+  },
+  mapp_image: {
+    width: '100%',
+    height: '100%',
+  },
+  sociteni_button_background: {
+    top: 20,
+    left: 20,
+    borderRadius: 20,
+    shadowRadius: 10,
+    shadowOpacity: 0.8,
+    paddingVertical: 6,
+    position: 'absolute',
+    paddingHorizontal: 12,
+    shadowColor: '#bbbfbb',
+    backgroundColor: 'white',
+    shadowOffset: {width: 0, height: 0},
+  },
+  button_text: {
+    fontSize: 16,
+    color: 'grey',
+  },
+  menu_button_background: {
+    top: 20,
+    right: 20,
+    paddingVertical: 6,
+    position: 'absolute',
+    backgroundColor: 'transparent',
   },
   slideup_container: {
     flex: 1,
@@ -56,35 +132,6 @@ const styles = {
   commenting_button_text: {
     transform: [{scaleX: -1}, {rotate: '0deg'}],
   },
-};
-
-class App extends React.Component {
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Button
-          title="Show panel"
-          style={styles.fab_top_left}
-          onPress={() => this._panel.show()}
-        />
-        <SlidingUpPanel
-          draggableRange={{top: height / 1.75, bottom: 70}}
-          animatedValue={new Animated.Value(70)}
-          ref={c => (this._panel = c)}>
-          <View style={styles.slideup_container}>
-            <Text style={styles.text}>EXPLORE</Text>
-
-            <AppButton
-              onPress={() => this._panel.hide()}
-              titleStyle={styles.commenting_button_text}
-              style={styles.commenting_button_background}
-              title={generateFontistoIcon('commenting', 20, 'white')}
-            />
-          </View>
-        </SlidingUpPanel>
-      </SafeAreaView>
-    );
-  }
-}
+});
 
 export default App;
