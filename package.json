@@ -10,6 +10,7 @@
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug"
   },
   "dependencies": {
+    "moment": "^2.24.0",
     "react": "16.9.0",
     "react-native": "0.61.2",
     "react-native-gifted-chat": "^0.11.3",
