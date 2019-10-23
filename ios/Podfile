@@ -35,8 +35,7 @@ target 'Mapp' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
-
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
   pod 'ReactNativeNavigation', :path => '../node_modules/react-native-navigation'
 
 end
