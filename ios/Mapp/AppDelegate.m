@@ -6,6 +6,7 @@
  */
 
 #import "AppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -15,10 +16,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-    [ReactNativeNavigation bootstrap:jsCodeLocation launchOptions:launchOptions];
-
-    return YES;
+  [GMSServices provideAPIKey:@"AlzaSyCmbp-7RrE_k8Q16B4qyH5U_Nj0iRjlZ0c"];
+  NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  [ReactNativeNavigation bootstrap:jsCodeLocation launchOptions:launchOptions];
+  
+  return YES;
 }
 
 @end
