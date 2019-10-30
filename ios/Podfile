@@ -34,14 +34,13 @@ target 'Mapp' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
   pod 'ReactNativeNavigation', :path => '../node_modules/react-native-navigation'
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
   
-  rn_maps_path = '../node_modules/react-native-maps'
-  pod 'react-native-google-maps', :path => rn_maps_path
   pod 'GoogleMaps'
   pod 'Google-Maps-iOS-Utils'
+  pod 'react-native-google-maps', :path => '../node_modules/react-native-maps'
 
 end
 

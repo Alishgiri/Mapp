@@ -190,7 +190,6 @@ configurations.all {
 
 dependencies {
     implementation project(':react-native-navigation')
-    implementation project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation 'com.android.support:design:25.4.0'
