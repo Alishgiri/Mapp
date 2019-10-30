@@ -7,7 +7,12 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug"
+    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "clean": "cd ./android && ./gradlew clean",
+    "getpods": "cd ./ios && pod install && cd ..",
+    "bundle": "cd ./android && ./gradlew bundle && open ./app/build/outputs/bundle/release/",
+    "generate": "cd ./android && ./gradlew app:assembleRelease && open ./app/build/outputs/apk/release/"
+
   },
   "dependencies": {
     "lodash": "^4.17.15",
