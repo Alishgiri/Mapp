@@ -12,9 +12,9 @@
     "getpods": "cd ./ios && pod install && cd ..",
     "bundle": "cd ./android && ./gradlew bundle && open ./app/build/outputs/bundle/release/",
     "generate": "cd ./android && ./gradlew app:assembleRelease && open ./app/build/outputs/apk/release/"
-
   },
   "dependencies": {
+    "@react-native-community/cameraroll": "^1.2.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "react": "16.9.0",

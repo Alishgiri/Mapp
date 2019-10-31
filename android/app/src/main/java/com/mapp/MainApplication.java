@@ -14,6 +14,7 @@ import com.reactnativenavigation.react.ReactGateway;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.imagepicker.ImagePickerPackage;
+import com.reactnativecommunity.cameraroll.CameraRollPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -43,7 +44,8 @@ public class MainApplication extends NavigationApplication {
             // eg. new VectorIconsPackage()
             new LinearGradientPackage(),
             new MapsPackage(),
-            new ImagePickerPackage()
+            new ImagePickerPackage(),
+            new CameraRollPackage()
         );
     }
 
