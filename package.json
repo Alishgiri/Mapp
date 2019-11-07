@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "ios": "react-native run-ios",
+    "ios": "yarn react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "android": "yarn react-native run-android",
     "clean": "cd ./android && ./gradlew clean",
     "getpods": "cd ./ios && pod install && cd ..",
     "bundle": "cd ./android && ./gradlew bundle && open ./app/build/outputs/bundle/release/",
